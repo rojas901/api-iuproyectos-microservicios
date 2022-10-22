@@ -4,6 +4,7 @@ const { getConnection } = require("./db/db-connection-mongo");
 
 const app = express();
 
+app.use(express.json());
 app.use('/cliente', require('./router/cliente'));
 app.use('/tipoproyecto', require('./router/tipoProyecto'));
 app.use('/etapa', require('./router/etapa'));

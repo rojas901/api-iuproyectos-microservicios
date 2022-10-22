@@ -7,10 +7,12 @@ const TipoProyectoSchema = Schema({
   },
   fechaCreacion: {
     type: Date,
+    default: new Date(),
     required: true,
   },
   fechaActualizacion: {
     type: Date,
+    default: new Date(),
     required: true,
   },
 });

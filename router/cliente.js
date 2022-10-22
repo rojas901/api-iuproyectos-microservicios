@@ -1,21 +1,11 @@
 const { Router } = require("express");
+const clienteController = require('../controllers/cliente');
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.send("Hola estoy en crear usuario GET");
-});
-
-router.post("/", (req, res) => {
-  res.send("Hola estoy en crear usuario POST");
-});
-
-router.put("/", (req, res) => {
-  res.send("Hola estoy en crear usuario PUT");
-});
-
-router.delete("/", (req, res) => {
-  res.send("Hola estoy en crear usuario DELETE");
-});
+router.get("/", clienteController.find);
+router.post("/", clienteController.create);
+router.put("/:id", clienteController.update);
+router.delete("/:id", clienteController.delete);
 
 module.exports = router;
