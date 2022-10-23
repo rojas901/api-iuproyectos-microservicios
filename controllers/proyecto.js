@@ -18,10 +18,12 @@ const proyectoController = {
     find: async (req, res) => {
         try {
             const proyecto = await Proyecto.find().
-                populate({ path: 'cliente', select: 'nombre' }).
-                populate({ path: 'tipoProyecto', select: 'nombre' }).
-                populate({ path: 'universidad', select: 'nombre' }).
-                populate({ path: 'etapa', select: 'nombre' });
+                populate([
+                    { path: 'cliente', select: 'nombre' },
+                    { path: 'tipoProyecto', select: 'nombre' },
+                    { path: 'universidad', select: 'nombre' },
+                    { path: 'etapa', select: 'nombre' }
+                ]);
             return res.status(200).json(proyecto);
         } catch (error) {
             console.log(error);
