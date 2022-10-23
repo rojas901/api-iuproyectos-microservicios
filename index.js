@@ -12,7 +12,7 @@ app.use('/universidad', require('./router/universidad'));
 app.use('/proyecto', require('./router/proyecto'));
 
 app.listen(process.env.PORT, () => {
-  console.log(`Listening on port ${process.env.PORT}`);
+    console.log(`Listening on port ${process.env.PORT}`);
 });
 
 getConnection();
