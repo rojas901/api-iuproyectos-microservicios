@@ -4,7 +4,7 @@ const clienteController = {
 	create: async (req, res) => {
 		const cliente = new Cliente(req.body);
 		try {
-			if (await Cliente.findOne({ nombre: req.body.nombre })) {
+			if (await Cliente.findOne({ $or: [{nombre: req.body.nombre}, {email: req.body.email}] })) {
 				return res.status(200).json({ msg: "El cliente ya existe." });
 			} else {
 				await cliente.save();
