@@ -1,21 +1,11 @@
 const { Router } = require("express");
+const proyectoController = require('../controllers/proyecto')
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.send("Hola estoy en crear Proyecto GET");
-});
-
-router.post("/", (req, res) => {
-  res.send("Hola estoy en crear Proyecto POST");
-});
-
-router.put("/", (req, res) => {
-  res.send("Hola estoy en crear Proyecto PUT");
-});
-
-router.delete("/", (req, res) => {
-  res.send("Hola estoy en crear Proyecto DELETE");
-});
+router.get("/", proyectoController.find);
+router.post("/", proyectoController.create);
+router.put("/:id", proyectoController.update);
+router.delete("/:id", proyectoController.delete);
 
 module.exports = router;
