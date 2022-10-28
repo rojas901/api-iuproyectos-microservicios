@@ -1,5 +1,5 @@
 {
-  "name": "api-iuproyectos",
+  "name": "api-iuproyectos-microservicios",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rojas901/api-iuproyectos.git"
+    "url": "git+https://github.com/rojas901/api-iuproyectos-microservicios.git"
   },
   "keywords": [],
   "author": "Carlos Rojas",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rojas901/api-iuproyectos/issues"
+    "url": "https://github.com/rojas901/api-iuproyectos-microservicios/issues"
   },
-  "homepage": "https://github.com/rojas901/api-iuproyectos#readme",
+  "homepage": "https://github.com/rojas901/api-iuproyectos-microservicios#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
