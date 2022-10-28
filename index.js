@@ -7,10 +7,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/cliente', require('./router/cliente'));
-app.use('/tipoproyecto', require('./router/tipoProyecto'));
-app.use('/etapa', require('./router/etapa'));
-app.use('/universidad', require('./router/universidad'));
 app.use('/proyecto', require('./router/proyecto'));
 
 app.listen(process.env.PORT, () => {
