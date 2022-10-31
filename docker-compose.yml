@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  microservicio:
+    image: rojas901/proyectos-microservicios
+    ports:
+      - "4001:4001"
+    networks:
+      - proyectos-app
+
+networks:
+  proyectos-app:
+
+#docker compose up (crea todo los especificado en este archivo)
+#docker compose down (elimina los container creados con el primer comando)
