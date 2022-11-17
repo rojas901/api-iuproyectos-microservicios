@@ -1,14 +1,47 @@
 version: "3.9"
 services:
   microservicio:
-    image: rojas901/proyectos-microservicios
+    container_name: microservicio
+    image: rojas901/proyecto-microservicio:v4
     ports:
       - "4001:4001"
     networks:
-      - proyectos-app
+      - proyectos-net
+    depends_on:
+      - proyecto-db
+    restart: always
+
+  api:
+    container_name: api
+    image: rojas901/proyecto-api:v4
+    ports:
+      - "4000:4000"
+    networks:
+      - proyectos-net
+    depends_on:
+      - proyecto-db
+    restart: always
+    
+  proyecto-db:
+    container_name: proyecto-db
+    image: mongo:latest
+    volumes:
+      - mi-volumen:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - proyectos-net
 
 networks:
-  proyectos-app:
+  proyectos-net:
+volumes:
+  mi-volumen:
+    external: true
+
+#Este docker compose funciona con una URL_DB en .env diferente por lo cual se debe cambiar la configuracion para trabajar con una base de datos local en vez de mongo atlas y usar las versiones 4 de las imagenes
 
 #docker compose up (crea todo los especificado en este archivo)
 #docker compose down (elimina los container creados con el primer comando)
+#docker compose build (compila imagenes si hay que hacerlo)
+#docker compose logs -f
+#build: context: . (toma el dockerfile de directorio raiz)

@@ -15,12 +15,12 @@ const UniversidadSchema = Schema({
     },
     fechaCreacion: {
         type: Date,
-        default: new Date(),
+        default: Date.now,
         required: true,
     },
     fechaActualizacion: {
         type: Date,
-        default: new Date(),
+        default: Date.now,
         required: true,
     },
 });

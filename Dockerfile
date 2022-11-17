@@ -29,3 +29,4 @@ CMD [ "node", "index.js" ]
 #docker stop "container ID" (detiene container)
 #docker start "container ID" (inicia container)
 #docker rm "container ID" (elimina container)
+#docker exec -it "idcontainer" /bin/bash (para ingresar a la consola del contenedor, para salir escribo exit)
